@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browserify index.js -t babelify --outfile dist/dist.js && node server.js"
+    "start": "browserify app/index.js -t babelify --outfile dist/dist.js && node server.js"
   },
   "author": "",
   "license": "ISC",
