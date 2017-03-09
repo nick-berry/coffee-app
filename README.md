@@ -2,6 +2,8 @@
 
 Source code for the coffee app
 
-### Installation Instructions
+### how to
 
-Don't
+> npm start
+
+builds the app with browserify & babel and starts the express server
