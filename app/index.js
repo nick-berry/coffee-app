@@ -14,13 +14,28 @@ const users = [{
   lastName: 'Thorsen'
 }]
 
-const element = (
-  <ul>
-    {formatName(users)}
-  </ul>
-);
+var PostList = React.createClass({
+  render: function() {
+    var posts = [{
+      userName: "NBerry",
+      location: "3 Pleasant Street",
+      order: "Large coffee black",
+      shop: "Vonsolln"
+    },
+    {
+      userName: "Gthorsen",
+      location: "4 Market Street",
+      order: "Large medium cream & sugar",
+      shop: "BNG"
+    }];
+    var postList = posts.map(function(post, index){
+      return <div className="list-group-item" key={ index }><span>{post.userName} </span><span>{post.location} </span><span>{post.order} </span><span>{post.shop}</span></div>;
+    })
+    return <div className="list-group">{postList}</div>
+  }
+});
 
 ReactDOM.render(
-  element,
+  <PostList />,
   document.getElementById('root')
 );
