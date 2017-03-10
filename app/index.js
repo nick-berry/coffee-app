@@ -29,7 +29,7 @@ var PostList = React.createClass({
       shop: "BNG"
     }];
     var postList = posts.map(function(post, index){
-      return <div className="list-group-item" key={ index }><span>{post.userName} </span><span>{post.location} </span><span>{post.order} </span><span>{post.shop}</span></div>;
+      return <div className="list-group-item" key={ index }><span>{post.userName} </span><span>{post.location} </span><span>{post.order} </span><span>{post.shop}</span><span className="badge">Respond</span>Help</div>;
     })
     return <div className="list-group">{postList}</div>
   }
