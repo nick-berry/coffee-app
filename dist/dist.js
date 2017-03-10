@@ -2,21 +2,30 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
 
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
+function formatName(users) {
+  return users.map(user => React.createElement(
+    'li',
+    null,
+    'Hello, ',
+    user.firstName,
+    ' ',
+    user.lastName,
+    '!'
+  ));
 }
 
-const user = {
+const users = [{
   firstName: 'Nick',
   lastName: 'Berry'
-};
+}, {
+  firstName: 'Graham',
+  lastName: 'Thorsen'
+}];
 
 const element = React.createElement(
-  'h1',
+  'ul',
   null,
-  'Hello, ',
-  formatName(user),
-  '!'
+  formatName(users)
 );
 
 ReactDOM.render(element, document.getElementById('root'));
