@@ -1,19 +1,23 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
 
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
+function formatName(users) {
+  return users.map((user) => <li>Hello, {user.firstName} {user.lastName}!</li>)
 }
 
-const user = {
+const users = [{
   firstName: 'Nick',
   lastName: 'Berry'
-}
+},
+{
+  firstName: 'Graham',
+  lastName: 'Thorsen'
+}]
 
 const element = (
-  <h1>
-    Hello, {formatName(user)}!
-  </h1>
+  <ul>
+    {formatName(users)}
+  </ul>
 );
 
 ReactDOM.render(
